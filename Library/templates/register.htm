@@ -1,0 +1,40 @@
+{% extends 'index.htm' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<form action="" method="post" class="form-control">
+    {% csrf_token %}
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="username" class="col-form-label">Username</label>
+        </div>
+        <div class="col-auto">
+          {{ form.username }}
+        </div>
+        <div class="col-auto">
+            <label for="pass" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            {{ form.password }}
+          </div>
+          <div class="col-auto">
+            <label for="email" class="col-form-label">Email</label>
+          </div>
+          <div class="col-auto">
+            {{ form.email }}
+          </div>
+          <div class="col-auto">
+            <label for="firstname" class="col-form-label">First name</label>
+          </div>
+          <div class="col-auto">
+            {{ form.firstname }}
+          </div>
+          <div class="col-auto">
+            <label for="lastname" class="col-form-label">Last name</label>
+          </div>
+          <div class="col-auto">
+            {{ form.lastname }}
+          </div>
+          <input type="submit" value="Register" class="btn btn-success btn-lg"/>
+      </div>
+</form>
+{% endblock %}

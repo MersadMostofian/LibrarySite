@@ -1,0 +1,14 @@
+{% extends 'index.htm' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    {% for book in books %}
+    <a href="{% url 'detile' book.id %}">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ book.image.url }}" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text">{{ book.name }}</p>
+            </div>
+          </div>
+    </a>
+    {% endfor %}
+{% endblock %}

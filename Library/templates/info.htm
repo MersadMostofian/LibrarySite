@@ -1,0 +1,17 @@
+{% extends 'index.htm' %}
+{% block title %}Info{% endblock %}
+{% block content %}
+    {% for book in books %}
+    <a href="{% url 'detile' book.id %}">
+        <figure class="figure">
+            {% if book.status == 'Y' %}
+                <img src="{{ book.image.url }}" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption text-end">{{ book.name }}</figcaption>
+            {% else %}
+                <img src="{{ book.image.url }}" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption text-end">{{ book.name }}</figcaption>
+            {% endif %}
+        </figure>
+    </a>
+    {% endfor %}
+{% endblock %}

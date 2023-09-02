@@ -1,0 +1,33 @@
+{% extends 'index.htm' %}
+{% block title %}Detile{% endblock %}
+{% block content %}
+    <figure class="figure">
+        <img src="{{ book.image.url }}" class="figure-img img-fluid rounded">
+    </figure>
+    <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <h5>Name: {{ book.name }}</h5>
+          </div>
+          <div class="col">
+            <h5>Author: {{ book.author }}</h5>
+          </div>
+          <div class="col">
+            <h5>Publisher: {{ book.publishers }}</h5>
+          </div>
+          <div class="col">
+            <h5>Publish Year: {{ book.publishDate }}</h5>
+          </div>
+          <div class="col">
+            <h5>Category: {{ book.category }}</h5>
+          </div>
+        </div>
+      </div>
+      {% if user.is_staff == False %}
+      <a href="{% url 'get' book.id%}" class="btn btn-outline-success">Get</a>
+      {% else %}
+      <a href="{% url 'edite' book.id%}" class="btn btn-outline-primary">Edite</a>
+      <a href="{% url 'delete' book.id%}" class="btn btn-outline-danger">Delete</a>
+      <h4>This book was loaned to {{ book.given_to }}</h4>
+      {% endif %}
+{% endblock %}

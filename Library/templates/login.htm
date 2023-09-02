@@ -1,0 +1,24 @@
+{% extends 'index.htm' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<form action="" method="post" class="form-control">
+    {% csrf_token %}
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="username" class="col-form-label">Username</label>
+        </div>
+        <div class="col-auto">
+          {{ form.username }}
+        </div>
+        <div class="col-auto">
+            <label for="pass" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            {{ form.password }}
+          </div>
+      </div>
+    <input type="submit" value="Login" class="btn btn-info btn-lg"/>
+</form>
+{% endblock %}
+
+

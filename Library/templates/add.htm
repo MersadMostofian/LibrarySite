@@ -1,0 +1,9 @@
+{% extends 'index.htm' %}
+{% block title %}Add Book{% endblock %}
+{% block content %}
+<form action="" method="post" class="form-control" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add" class="btn btn-primary btn-lg"/>
+</form>
+{% endblock %}

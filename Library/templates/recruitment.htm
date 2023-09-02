@@ -1,0 +1,7 @@
+{% extends 'index.htm' %}
+{% block title %}Users{% endblock %}
+{% block content %}
+    {% for user in users %}
+    <a class="btn btn-primary" href="{% url 'get_employee' user.username %}" role="button">{{ user.username }}</a>
+    {% endfor %}
+{% endblock %}
